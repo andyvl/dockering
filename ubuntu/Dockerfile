@@ -1,6 +1,6 @@
 ## Ubuntu base image ##
 #
-## https://github.com/andyvl/ubuntu ##
+## https://github.com/andyvl/dockering ##
 
 FROM ubuntu:14.04
 
