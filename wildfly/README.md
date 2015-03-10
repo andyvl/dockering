@@ -14,4 +14,4 @@ JBoss wildfly running on Oracle Java 8.
 
 Run a container using the following command:
 
-  `docker run -d dockering/wildfly`
+  `docker run -d -p 8080:8080 -p 9990:9990 -v /home/andy/apps/wildfly:/opt/jboss/wildfly dockering/wildfly`

@@ -1,0 +1,7 @@
+app:
+  image: dockering/wildfly
+  ports:
+    - "8080:8080"
+    - "9990:9990"
+  volumes:
+    - /home/andy/apps/wildfly:/opt/jboss/wildfly

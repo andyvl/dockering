@@ -32,6 +32,8 @@ ENV JBOSS_HOME /opt/jboss/wildfly
 # Expose the ports we're interested in
 EXPOSE 8080 9990
 
+VOLUME ["/opt/jboss/wildfly"]
+
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interface
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
