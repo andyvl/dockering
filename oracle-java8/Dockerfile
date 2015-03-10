@@ -1,4 +1,5 @@
-## Ubuntu base image ##
+## Oracle-java 8 image ##
+#  dockering/oracle-java8
 #
 ## https://github.com/andyvl/dockering ##
 
