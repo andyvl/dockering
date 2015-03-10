@@ -24,7 +24,7 @@ USER jboss
 RUN \
   cd $HOME && \
   curl http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz | tar zx && \
-  mv $HOME/wildfly-$WILDFLY_VERSION $HOME/wildfly
+  ln -s $HOME/wildfly-$WILDFLY_VERSION $HOME/wildfly
 
 # Set the JBOSS_HOME env variable
 ENV JBOSS_HOME /opt/jboss/wildfly
