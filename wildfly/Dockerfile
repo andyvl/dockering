@@ -19,9 +19,6 @@ RUN \
 # Switch to user jboss
 USER jboss
 
-RUN echo $http_proxy
-RUN ping -c 3 pascal.athens.intrasoft-intl.private
-
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
 RUN \
