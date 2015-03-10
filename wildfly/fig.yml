@@ -4,4 +4,4 @@ app:
     - "8080:8080"
     - "9990:9990"
   volumes:
-    - /home/andy/apps/wildfly:/opt/jboss/wildfly
+    - $HOME/dev/docker/wildfly:/opt/jboss/wildfly
