@@ -1,7 +1,8 @@
-app:
+wildfly:
   image: dockering/wildfly
   ports:
     - "8080:8080"
     - "9990:9990"
   volumes:
-    - $HOME/dev/docker/wildfly:/opt/jboss/wildfly
+    - $HOME/dev/docker/wildfly/log:/opt/jboss/wildfly/standalone/log
+    - $HOME/dev/docker/wildfly/deployments:/opt/jboss/wildfly/standalone/deployments
