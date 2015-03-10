@@ -26,6 +26,9 @@ RUN \
   curl http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz | tar zx && \
   ln -s $HOME/wildfly-$WILDFLY_VERSION $HOME/wildfly
 
+# Add a default admin user.
+RUN /opt/jboss/wildfly/bin/add-user.sh --silent admin admin
+
 # Set the JBOSS_HOME env variable
 ENV JBOSS_HOME /opt/jboss/wildfly
 
@@ -36,5 +39,5 @@ EXPOSE 8080 9990
 VOLUME ["/opt/jboss/wildfly/standalone/deployments", "/opt/jboss/wildfly/standalone/log"]
 
 # Set the default command to run on boot
-# This will boot WildFly in the standalone mode and bind to all interface
+# Boot standalone WildFly and bind to all interface
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
