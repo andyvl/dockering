@@ -7,12 +7,13 @@ FROM dockering/oracle-java8
 
 # Set the WILDFLY_VERSION env variable
 ENV ELASTICSEARCH_VERSION 1.7.0
+ENV ES_HOME /opt/es
 
 # Download and extract elasticsearch in $HOME directory
 RUN \
-  cd $HOME && \
+  cd /tmp && \
   curl https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-$ELASTICSEARCH_VERSION.tar.gz | tar zx && \
-  ln -s $HOME/elasticsearch-$ELASTICSEARCH_VERSION $HOME/elasticsearch && \
+  mv elasticsearch-$ELASTICSEARCH_VERSION $ES_HOME && \
   rm -f elasticsearch-$ELASTICSEARCH_VERSION.tar.gz
 
 # Copy elasticsearch settings
@@ -30,4 +31,4 @@ EXPOSE 9300
 WORKDIR /data
 
 # Define default command.
-CMD ["$HOME/elasticsearch/bin/elasticsearch"]
+CMD ["/bin/bash", "-c", "$ES_HOME/bin/elasticsearch"]
