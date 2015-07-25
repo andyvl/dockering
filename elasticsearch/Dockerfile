@@ -17,7 +17,7 @@ RUN \
   rm -f elasticsearch-$ELASTICSEARCH_VERSION.tar.gz
 
 # Copy elasticsearch settings
-ADD config/elasticsearch.yml $HOME/elasticsearch/config/elasticsearch.yml
+ADD config/elasticsearch.yml $ES_HOME/config/elasticsearch.yml
 
 # Create /data directory and make it mountable
 RUN mkdir /data
